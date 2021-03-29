@@ -79,7 +79,7 @@ namespace Prueba.ViewModels
                 },
 
             };
-            holaa();
+            apiConection();
 
 
 
@@ -88,7 +88,7 @@ namespace Prueba.ViewModels
 
         }
 
-        private async void holaa()
+        private async void apiConection()
         {
             httpModel client = new httpModel();
             var result = await client.Get<WSResult>("https://jsonplaceholder.typicode.com/posts/1");
@@ -105,6 +105,8 @@ namespace Prueba.ViewModels
                     Title = result.title,
                     Description = result.body,
                 });
+
+                OnPropertyChanged();
             }
         }
 
