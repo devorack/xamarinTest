@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prueba.Views.CarouselPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <CarouselView ItemsSource="{Binding List}" EmptyView="Nada que mostrar">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame 
+                               HasShadow="True"
+                               CornerRadius="15"
+                               Margin="20"
+                               Padding="0"
+                               HeightRequest="600"
+                               WidthRequest="300"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand">
+                                
+                                <StackLayout>
+                                    
+                                    <StackLayout>
+                                        <Frame 
+                                            Margin="0"
+                                            BackgroundColor="#2a8ae2"
+                                            CornerRadius="15"
+                                            HeightRequest="150"
+                                            WidthRequest="300">
+
+                                            <Frame.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                    <GradientStop Color="AliceBlue" Offset="0.1"/>
+                                                    <GradientStop Color="#2a8ae2" Offset="1.0"/>
+                                                    
+                                                </LinearGradientBrush>
+                                            </Frame.Background>
+
+                                            <Label Text="{Binding Title}"
+                                               FontAttributes="Italic"
+                                               FontSize="Large"
+                                               TextColor="White"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               Padding="0,0,0,8"    />  
+                                        </Frame>
+                                    </StackLayout>
+                                    
+                                    <FlexLayout 
+                                        Wrap="Wrap" 
+                                        Direction="Row" 
+                                        AlignItems="End"
+                                        JustifyContent="SpaceEvenly">
+
+                                        <Label Text="$"        
+                                           FontAttributes="Bold"
+                                           FontSize="15"
+                                           Padding="4"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+
+                                        <Label Text="{Binding Description}"        
+                                           FontAttributes="Bold"
+                                           FontSize="35"
+                                           Padding="4"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+
+                                        <Label Text="Por mes"        
+                                           FontAttributes="Bold"
+                                           FontSize="10"
+                                           Padding="4"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                    </FlexLayout>
+                                    
+                                    <BoxView 
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       HeightRequest="1"
+                                       WidthRequest="150"   
+                                       Color="#5b5d68"></BoxView>
+                                    
+                                    <CollectionView ItemsSource="{Binding Items}"
+                                        >
+
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell >
+                                                    <StackLayout Margin="8" Background="red">
+                                                        <Label Text="hola" FontAttributes="Bold" />
+                                                        <Label Text="hilas" />
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+
+                                    </CollectionView>
+
+
+                                    <Button Text="Botton" BackgroundColor="#2a8ae2" WidthRequest="80" HeightRequest="50" TextColor="White"></Button>
+                                </StackLayout>
+                                
+                            </Frame>
+                            
+
+                         
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
