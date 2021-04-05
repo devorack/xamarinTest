@@ -14,24 +14,202 @@ namespace Prueba.ViewModels
         ObservableCollection<CarouselModel> list = new ObservableCollection<CarouselModel> {
 
            new CarouselModel{
-            Title = "Titulo",
-            Description = "Descripcion",
+            Title = "Flexi Free",
+            Price = "Gratis",
+            ListItems = new List<Item>{
+                new Item()
+                {
+                    Items = "1 Empresa",
+                    
+                },
+
+                new Item()
+                {
+                    Items = "1 Usuario",
+
+                },
+                new Item()
+                {
+                    Items = "2 Tipos de Documento",
+
+                },
+                new Item()
+                {
+                    Items = "2 GB",
+
+                },
+
+            }
            },
 
            new CarouselModel{
-            Title = "Titulo2",
-            Description = "Descripcion2",
+            Title = "Flexi Basic",
+            Price = "18.05",
+            ListItems = new List<Item>{
+                new Item()
+                {
+                    Items = "1 Empresa",
+
+                },
+
+                new Item()
+                {
+                    Items = "2 Usuario",
+
+                },
+                new Item()
+                {
+                    Items = "10 Tipos de Documentos",
+
+                },
+
+                new Item()
+                {
+                    Items = "Docuviewer",
+
+                },
+                new Item()
+                {
+                    Items = "10 GB",
+
+                },
+
+            }
            },
 
            new CarouselModel{
-            Title = "Titulo3",
-            Description = "Descripcion3",
+            Title = "Flexi Business",
+            Price = "36.83",
+            ListItems = new List<Item>{
+                new Item()
+                {
+                    Items = "1 Empresa",
+
+                },
+
+                new Item()
+                {
+                    Items = "4 Usuario",
+
+                },
+
+                new Item()
+                {
+                    Items = "20 Tipos de Documento",
+
+                },
+                new Item()
+                {
+                    Items = "Versionamiento de documentos",
+
+                },
+
+                new Item()
+                {
+                    Items = "Flow",
+
+                },
+
+                new Item()
+                {
+                    Items = "Notificacion",
+
+                },
+
+                new Item()
+                {
+                    Items = "Docuviewer",
+
+                },
+                new Item()
+                {
+                    Items = "25 GB",
+
+                },
+
+
+                new Item()
+                {
+                    Items = "4 Firma digital adobe Sing ",
+
+                },
+
+            }
            },
 
            new CarouselModel{
-            Title = "Titulo4",
-            Description = "Descripcion4",
+            Title = "Flexi Enterprise",
+            Price = "80.33",
+            ListItems = new List<Item>{
+                new Item()
+                {
+                    Items = "1 Empresa",
+
+                },
+
+                new Item()
+                {
+                    Items = "4 Usuario",
+
+                },
+                new Item()
+                {
+                    Items = "30 Tipos de Documento",
+
+                },
+
+                new Item()
+                {
+                    Items = "Versionamiento de documentos",
+
+                },
+
+                new Item()
+                {
+                    Items = "Flow",
+
+                },
+
+                new Item()
+                {
+                    Items = "Notificacion",
+
+                },
+                new Item()
+                {
+                    Items = "Docuviewer",
+
+                },
+                new Item()
+                {
+                    Items = "60 GB",
+
+                },
+
+                new Item()
+                {
+                    Items = "4 Firma digital adobe Sing ",
+
+                },
+
+            }
            },
+
+           new CarouselModel{
+            Title = "Flexi Personalizado",
+            Price = "Escríbanos para más información",
+            ListItems = new List<Item>{
+                new Item()
+                {
+                    Items = "flexy-info@myflexifile.com",
+
+                },
+
+               
+
+            }
+           },
+
         };
         
 
@@ -45,50 +223,18 @@ namespace Prueba.ViewModels
         #endregion
 
 
-        private ObservableCollection<Car> items;
-        public ObservableCollection<Car> Items
-        {
-            get {
-                return items; 
-            }
-            set
-            {
-                items = value;
-                OnPropertyChanged();
-            }
-        }
+      
 
         public CarouselViewModel()
         {
 
             Console.WriteLine("entro en el constructor");
-            // Here you can have your data form db or something else,
-            // some data that you already have to put in the list
-            Items = new ObservableCollection<Car>() {
-                new Car()
-                {
-                    CarID = 1,
-                    Make = "Tesla Model S",
-                    YearOfModel = 2015
-                },
-                  new Car()
-                {
-                    CarID = 2,
-                    Make = "Audi R8",
-                    YearOfModel = 2012
-                },
-
-            };
-            apiConection();
-
-
-
-            // Web service call to update list with new values
+            
             
 
         }
 
-        private async void apiConection()
+        private async void ApiConection()
         {
             httpModel client = new httpModel();
             var result = await client.Get<WSResult>("https://jsonplaceholder.typicode.com/posts/1");
@@ -103,7 +249,7 @@ namespace Prueba.ViewModels
                 list.Add(new CarouselModel
                 {
                     Title = result.title,
-                    Description = result.body,
+                    Price = result.body,
                 });
 
                 OnPropertyChanged();

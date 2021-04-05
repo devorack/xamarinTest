@@ -6,10 +6,11 @@ using System.Text;
 
 namespace Prueba.Models
 {
-    class CarouselModel: BaseViewModel
+    class CarouselModel
     {
         public string Title { get; set; }
     
-        public string Description { get; set; }
+        public string Price { get; set; }
+        public List<Item> ListItems { get; set; }
     }
 }

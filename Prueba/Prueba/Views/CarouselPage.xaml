@@ -4,7 +4,7 @@
              x:Class="Prueba.Views.CarouselPage">
     <ContentPage.Content>
         <StackLayout>
-            <CarouselView ItemsSource="{Binding List}" EmptyView="Nada que mostrar">
+            <CarouselView ItemsSource="{Binding List}" EmptyView="Nada que mostrar" PeekAreaInsets="30" >
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
@@ -12,7 +12,7 @@
                             <Frame 
                                HasShadow="True"
                                CornerRadius="15"
-                               Margin="20"
+                               Margin="15"
                                Padding="0"
                                HeightRequest="600"
                                WidthRequest="300"
@@ -31,7 +31,7 @@
 
                                             <Frame.Background>
                                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                    <GradientStop Color="AliceBlue" Offset="0.1"/>
+                                                    <GradientStop Color="Black" Offset="0.1"/>
                                                     <GradientStop Color="#2a8ae2" Offset="1.0"/>
                                                     
                                                 </LinearGradientBrush>
@@ -50,8 +50,8 @@
                                     <FlexLayout 
                                         Wrap="Wrap" 
                                         Direction="Row" 
-                                        AlignItems="End"
-                                        JustifyContent="SpaceEvenly">
+                                        AlignItems="Center"
+                                        JustifyContent="Center">
 
                                         <Label Text="$"        
                                            FontAttributes="Bold"
@@ -60,46 +60,60 @@
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center" />
 
-                                        <Label Text="{Binding Description}"        
+                                        <Label Text="{Binding Price}"        
                                            FontAttributes="Bold"
                                            FontSize="35"
                                            Padding="4"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center" />
 
-                                        <Label Text="Por mes"        
+                                    </FlexLayout>
+
+                                    <Label Text="Por mes"        
                                            FontAttributes="Bold"
                                            FontSize="10"
                                            Padding="4"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center" />
-                                    </FlexLayout>
-                                    
                                     <BoxView 
                                        VerticalOptions="Center"
                                        HorizontalOptions="Center"
                                        HeightRequest="1"
                                        WidthRequest="150"   
                                        Color="#5b5d68"></BoxView>
-                                    
-                                    <CollectionView ItemsSource="{Binding Items}"
-                                        >
+
+
+                                    <CollectionView ItemsSource="{Binding ListItems}"  >
 
                                         <CollectionView.ItemTemplate>
                                             <DataTemplate>
-                                                <ViewCell >
-                                                    <StackLayout Margin="8" Background="red">
-                                                        <Label Text="hola" FontAttributes="Bold" />
-                                                        <Label Text="hilas" />
-                                                    </StackLayout>
-                                                </ViewCell>
+                                                <FlexLayout Margin="12" AlignItems="Center"
+                                        JustifyContent="Center">
+
+                                                    <Label
+                                                        TextColor="Black">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    
+                                                                    <Span Text="{Binding Items}" />
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+
+
+
+
+                                                </FlexLayout>
                                             </DataTemplate>
                                         </CollectionView.ItemTemplate>
 
                                     </CollectionView>
 
-
-                                    <Button Text="Botton" BackgroundColor="#2a8ae2" WidthRequest="80" HeightRequest="50" TextColor="White"></Button>
+                                    <StackLayout Padding="15">
+                                    <Button Text="Comprar" BackgroundColor="#2a8ae2" WidthRequest="80" HeightRequest="50" TextColor="White"></Button>
+                                    </StackLayout>
                                 </StackLayout>
                                 
                             </Frame>
