@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
+using ThemingDemo;
+using Xamarin.Forms;
 
 namespace Prueba.ViewModels
 {
         
     class CarouselViewModel : BaseViewModel
     {
-
+        
         ObservableCollection<CarouselModel> list = new ObservableCollection<CarouselModel> {
 
            new CarouselModel{
@@ -211,8 +214,8 @@ namespace Prueba.ViewModels
            },
 
         };
-        
 
+        public ICommand changeThemeCommand { get; set; }
         #region Properties
         public ObservableCollection<CarouselModel> List
         {
@@ -223,16 +226,19 @@ namespace Prueba.ViewModels
         #endregion
 
 
-      
 
         public CarouselViewModel()
         {
 
             Console.WriteLine("entro en el constructor");
             
-            
+
 
         }
+
+
+
+       
 
         private async void ApiConection()
         {

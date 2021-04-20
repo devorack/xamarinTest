@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prueba.Views.SettingsPage"
+             Title="{Binding NameTheme}"
+             BackgroundColor="{DynamicResource PrimaryColor}">
+    <ContentPage.Content>
+        <StackLayout>
+            <FlexLayout 
+            Wrap="Wrap" 
+            Direction="Row" 
+            AlignItems="Center"
+            JustifyContent="SpaceAround">
+                <Label Text="{Binding NameTheme}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="{DynamicResource PrimaryTextColor}"/>
+
+                <Button
+                    Text="{Binding NameTheme}"
+                    Command="{Binding changeThemeCommand}"></Button>
+            </FlexLayout>
+
+
+            <FlexLayout 
+                    Wrap="Wrap" 
+                    Direction="Row" 
+                    AlignItems="Center"
+                    JustifyContent="Center">
+
+
+                <CheckBox IsChecked="{Binding RadioButtonCheck}"  Color="red" />
+                <Label Text="Estoy deacuerdo con los " FontSize="10" Padding="0,0,8,0"></Label>
+                <Label Text="Terminos y condiciones ">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding viewTermsAndConditionsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </FlexLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

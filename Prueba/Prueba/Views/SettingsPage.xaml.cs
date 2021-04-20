@@ -4,22 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ThemingDemo;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Prueba.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-
-    public partial class CarouselPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public CarouselPage()
+        public SettingsPage()
         {
             InitializeComponent();
-            BindingContext = new CarouselViewModel();
+            BindingContext = new SettingsViewModel();
         }
-        
     }
 }
-

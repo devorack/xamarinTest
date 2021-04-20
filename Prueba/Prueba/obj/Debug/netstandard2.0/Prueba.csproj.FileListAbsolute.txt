@@ -13,17 +13,3 @@ C:\Users\shopy21\Documents\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0
 C:\Users\shopy21\Documents\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\ref\Prueba.dll
 C:\Users\shopy21\Documents\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.pdb
 C:\Users\shopy21\Documents\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Page1.xaml.g.cs
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\bin\Debug\netstandard2.0\Prueba.deps.json
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\bin\Debug\netstandard2.0\Prueba.dll
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\bin\Debug\netstandard2.0\ref\Prueba.dll
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\bin\Debug\netstandard2.0\Prueba.pdb
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.csprojAssemblyReference.cache
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.AssemblyInfoInputs.cache
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.AssemblyInfo.cs
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.csproj.CoreCompileInputs.cache
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.dll
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\ref\Prueba.dll
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Prueba.pdb
-C:\Users\shopy21\Documents\programacion\Xamarin\Prueba\Prueba\Prueba\obj\Debug\netstandard2.0\Views\CarouselPage.xaml.g.cs

@@ -2,17 +2,42 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prueba.Views.CarouselPage">
+    
     <ContentPage.Content>
         <StackLayout>
-            <CarouselView ItemsSource="{Binding List}" EmptyView="Nada que mostrar" PeekAreaInsets="30" >
+            <Frame 
+                
+                CornerRadius="15"
+                Margin="8"
+                Padding="0"                                 
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand">
+
+                <FlexLayout
+                    Margin="15"
+                    Padding="4"
+                    Wrap="Wrap" 
+                    Direction="Row" 
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween">
+
+                    <Label Text="Plan actual "/>
+                    <Label Text="Flexi Enterprise" 
+                           FontAttributes="Bold"
+                           FontSize="Large"/>
+                </FlexLayout>
+            </Frame>
+
+            <CarouselView ItemsSource="{Binding List}" EmptyView="Nada que mostrar" PeekAreaInsets="30" BackgroundColor="{DynamicResource PrimaryColor}">
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
+                            
                             <Frame 
                                HasShadow="True"
                                CornerRadius="15"
-                               Margin="15"
+                               Margin="5"
                                Padding="0"
                                HeightRequest="600"
                                WidthRequest="300"
@@ -31,8 +56,8 @@
 
                                             <Frame.Background>
                                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                    <GradientStop Color="Black" Offset="0.1"/>
-                                                    <GradientStop Color="#2a8ae2" Offset="1.0"/>
+                                                    <GradientStop Color="{DynamicResource SecondaryColor}" Offset="0.1"/>
+                                                    <GradientStop Color="{DynamicResource AccentColor}" Offset="1.0"/>
                                                     
                                                 </LinearGradientBrush>
                                             </Frame.Background>
@@ -112,7 +137,12 @@
                                     </CollectionView>
 
                                     <StackLayout Padding="15">
-                                    <Button Text="Comprar" BackgroundColor="#2a8ae2" WidthRequest="80" HeightRequest="50" TextColor="White"></Button>
+                                    <Button Text="Comprar" 
+                                            BackgroundColor="#2a8ae2" 
+                                            WidthRequest="80" 
+                                            HeightRequest="50" 
+                                            CornerRadius="20"
+                                            TextColor="White" />
                                     </StackLayout>
                                 </StackLayout>
                                 
