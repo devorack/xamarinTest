@@ -29,7 +29,7 @@
                     JustifyContent="Center">
 
 
-                <CheckBox IsChecked="{Binding RadioButtonCheck}"  Color="red" />
+                <CheckBox IsChecked="{Binding RadioButtonCheck}"  Color="{DynamicResource PrimaryColor}" />
                 <Label Text="Estoy deacuerdo con los " FontSize="10" Padding="0,0,8,0"></Label>
                 <Label Text="Terminos y condiciones ">
                     <Label.GestureRecognizers>

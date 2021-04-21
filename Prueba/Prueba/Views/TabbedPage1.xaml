@@ -7,8 +7,9 @@
 	        xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
 	        ios:Page.UseSafeArea="true"
             NavigationPage.HasNavigationBar="False"
-            BackgroundColor="{DynamicResource PageBackgroundColor}"
+            BackgroundColor="{DynamicResource BasePageColor}"
             BarTextColor="{DynamicResource PrimaryTextColor}"
+            SelectedTabColor="{DynamicResource SelectedTabColor}"
             android:TabbedPage.IsSwipePagingEnabled="False"
             android:TabbedPage.ToolbarPlacement="Bottom">
     <TabbedPage.Children>

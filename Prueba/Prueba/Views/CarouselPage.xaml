@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prueba.Views.CarouselPage">
+             x:Class="Prueba.Views.CarouselPage"
+             BackgroundColor="{DynamicResource BasePageColor}">
     
     <ContentPage.Content>
         <StackLayout>
             <Frame 
                 
-                CornerRadius="15"
+                CornerRadius="12"
                 Margin="8"
-                Padding="0"                                 
+                Padding="0"
+                BackgroundColor="{DynamicResource SecondBasePageColor}"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand">
 
@@ -21,140 +23,91 @@
                     AlignItems="Center"
                     JustifyContent="SpaceBetween">
 
-                    <Label Text="Plan actual "/>
-                    <Label Text="Flexi Enterprise" 
+                    <Label Text="Plan actual" TextColor="{DynamicResource PrimaryTextColor}"/>
+                    <Label Text="Flexi Enterprise"
+                           TextColor="{DynamicResource TitleTextColor}"
                            FontAttributes="Bold"
                            FontSize="Large"/>
                 </FlexLayout>
             </Frame>
-
-            <CarouselView ItemsSource="{Binding List}" EmptyView="Nada que mostrar" PeekAreaInsets="30" BackgroundColor="{DynamicResource PrimaryColor}">
-
-                <CarouselView.ItemTemplate>
+            
+            <CollectionView ItemsSource="{Binding List}" Margin="8">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
-                            
-                            <Frame 
-                               HasShadow="True"
-                               CornerRadius="15"
-                               Margin="5"
-                               Padding="0"
-                               HeightRequest="600"
-                               WidthRequest="300"
-                               HorizontalOptions="Center"
-                               VerticalOptions="CenterAndExpand">
-                                
+                        <StackLayout  x:Name="stackLayout">
+                        <Frame                 
+                        CornerRadius="12"
+                        Margin="8"
+                        Padding="5" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand">
+
+
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="{Binding Source={x:Reference stackLayout},Path=BindingContext.Color}" Offset="0.1"/>
+                                        <GradientStop Color="{DynamicResource PrimaryColor}" Offset="1.0"/>
+
+                                </LinearGradientBrush>
+                            </Frame.Background>
+
+                            <FlexLayout 
+                                Padding="12"
+                                Direction="Column" 
+                                AlignItems="Center"
+                                JustifyContent="SpaceBetween">
+
                                 <StackLayout>
-                                    
-                                    <StackLayout>
-                                        <Frame 
-                                            Margin="0"
-                                            BackgroundColor="#2a8ae2"
-                                            CornerRadius="15"
-                                            HeightRequest="150"
-                                            WidthRequest="300">
-
-                                            <Frame.Background>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                    <GradientStop Color="{DynamicResource SecondaryColor}" Offset="0.1"/>
-                                                    <GradientStop Color="{DynamicResource AccentColor}" Offset="1.0"/>
-                                                    
-                                                </LinearGradientBrush>
-                                            </Frame.Background>
-
-                                            <Label Text="{Binding Title}"
-                                               FontAttributes="Italic"
-                                               FontSize="Large"
-                                               TextColor="White"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center"
-                                               Padding="0,0,0,8"    />  
-                                        </Frame>
-                                    </StackLayout>
-                                    
-                                    <FlexLayout 
+                                    <FlexLayout
+                                        Margin="5,0,0,10"
                                         Wrap="Wrap" 
                                         Direction="Row" 
                                         AlignItems="Center"
-                                        JustifyContent="Center">
+                                        JustifyContent="SpaceBetween">
 
-                                        <Label Text="$"        
-                                           FontAttributes="Bold"
-                                           FontSize="15"
-                                           Padding="4"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center" />
-
-                                        <Label Text="{Binding Price}"        
-                                           FontAttributes="Bold"
-                                           FontSize="35"
-                                           Padding="4"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center" />
-
+                                        <Label Text="{Binding Title}"
+                                               FontAttributes="Bold"
+                                               TextColor="White"
+                                               FontSize="Medium"/>
+                                        <StackLayout
+                                            Margin="5,0,0,10"
+                                            Orientation="Vertical">
+                                                <Label Text="{Binding Price ,StringFormat='$ {0}'}" 
+                                                   TextColor="White"
+                                                   FontAttributes="Bold"
+                                                   FontSize="Large"/>
+                                            <Label Text="/mes"
+                                                   TextColor="White"/>
+                                        </StackLayout>
                                     </FlexLayout>
 
-                                    <Label Text="Por mes"        
-                                           FontAttributes="Bold"
-                                           FontSize="10"
-                                           Padding="4"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center" />
-                                    <BoxView 
-                                       VerticalOptions="Center"
-                                       HorizontalOptions="Center"
-                                       HeightRequest="1"
-                                       WidthRequest="150"   
-                                       Color="#5b5d68"></BoxView>
+                                    <Label  
+                                        Text="{Binding Items} " 
+                                        Padding="15"
+                                        Margin="0,0,0,10"
+                                        TextColor="White"
+                                        HorizontalTextAlignment="Center"/>
 
 
-                                    <CollectionView ItemsSource="{Binding ListItems}"  >
-
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-                                                <FlexLayout Margin="12" AlignItems="Center"
-                                        JustifyContent="Center">
-
-                                                    <Label
-                                                        TextColor="Black">
-                                                        <Label.FormattedText>
-                                                            <FormattedString>
-                                                                <FormattedString.Spans>
-                                                                    
-                                                                    <Span Text="{Binding Items}" />
-                                                                </FormattedString.Spans>
-                                                            </FormattedString>
-                                                        </Label.FormattedText>
-                                                    </Label>
-
-
-
-
-                                                </FlexLayout>
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-
-                                    </CollectionView>
-
-                                    <StackLayout Padding="15">
-                                    <Button Text="Comprar" 
-                                            BackgroundColor="#2a8ae2" 
-                                            WidthRequest="80" 
-                                            HeightRequest="50" 
-                                            CornerRadius="20"
-                                            TextColor="White" />
-                                    </StackLayout>
                                 </StackLayout>
+
+                                <Button 
+                                    Text="Comprar" 
+                                    BackgroundColor="#686969" 
+                                    WidthRequest="140.0" 
+                                    VerticalOptions="Center"   
+                                    HorizontalOptions='Center'                         
+                                    CornerRadius="30"
+                                    Command="{Binding changeThemeCommand}"
+                                    TextColor="White" />
                                 
-                            </Frame>
-                            
-
-                         
-
+                            </FlexLayout>
+                        </Frame>
                         </StackLayout>
                     </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

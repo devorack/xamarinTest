@@ -11,6 +11,8 @@ namespace Prueba.Models
         public string Title { get; set; }
     
         public string Price { get; set; }
-        public List<Item> ListItems { get; set; }
+
+        public string Color { get; set; }
+        public string Items { get; set; }
     }
 }

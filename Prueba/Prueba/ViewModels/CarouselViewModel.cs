@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using ThemingDemo;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Prueba.ViewModels
@@ -13,209 +14,48 @@ namespace Prueba.ViewModels
         
     class CarouselViewModel : BaseViewModel
     {
-        
+       
         ObservableCollection<CarouselModel> list = new ObservableCollection<CarouselModel> {
 
            new CarouselModel{
             Title = "Flexi Free",
             Price = "Gratis",
-            ListItems = new List<Item>{
-                new Item()
-                {
-                    Items = "1 Empresa",
-                    
-                },
-
-                new Item()
-                {
-                    Items = "1 Usuario",
-
-                },
-                new Item()
-                {
-                    Items = "2 Tipos de Documento",
-
-                },
-                new Item()
-                {
-                    Items = "2 GB",
-
-                },
-
-            }
+            Color = "#6CF5FF",
+            Items = "1 Empresa,1 Usuario,2 Tipos de Documento,2 GB",
            },
 
            new CarouselModel{
             Title = "Flexi Basic",
             Price = "18.05",
-            ListItems = new List<Item>{
-                new Item()
-                {
-                    Items = "1 Empresa",
-
-                },
-
-                new Item()
-                {
-                    Items = "2 Usuario",
-
-                },
-                new Item()
-                {
-                    Items = "10 Tipos de Documentos",
-
-                },
-
-                new Item()
-                {
-                    Items = "Docuviewer",
-
-                },
-                new Item()
-                {
-                    Items = "10 GB",
-
-                },
-
-            }
+            Color = "#3FA4FB",
+            Items =  "1 Empresa,2 Usuario,10 Tipos de Documentos,Docuviewer,10 GB",
            },
 
            new CarouselModel{
             Title = "Flexi Business",
             Price = "36.83",
-            ListItems = new List<Item>{
-                new Item()
-                {
-                    Items = "1 Empresa",
-
-                },
-
-                new Item()
-                {
-                    Items = "4 Usuario",
-
-                },
-
-                new Item()
-                {
-                    Items = "20 Tipos de Documento",
-
-                },
-                new Item()
-                {
-                    Items = "Versionamiento de documentos",
-
-                },
-
-                new Item()
-                {
-                    Items = "Flow",
-
-                },
-
-                new Item()
-                {
-                    Items = "Notificacion",
-
-                },
-
-                new Item()
-                {
-                    Items = "Docuviewer",
-
-                },
-                new Item()
-                {
-                    Items = "25 GB",
-
-                },
-
-
-                new Item()
-                {
-                    Items = "4 Firma digital adobe Sing ",
-
-                },
-
-            }
+            Color = "#FF64F3",
+            Items = "1 Empresa,4 Usuario,20 Tipos de Documento,Versionamiento de documentos,Flow,Notificacion,Docuviewer,25 GB,4 Firma digital adobe Sing ",
            },
 
            new CarouselModel{
             Title = "Flexi Enterprise",
             Price = "80.33",
-            ListItems = new List<Item>{
-                new Item()
-                {
-                    Items = "1 Empresa",
-
-                },
-
-                new Item()
-                {
-                    Items = "4 Usuario",
-
-                },
-                new Item()
-                {
-                    Items = "30 Tipos de Documento",
-
-                },
-
-                new Item()
-                {
-                    Items = "Versionamiento de documentos",
-
-                },
-
-                new Item()
-                {
-                    Items = "Flow",
-
-                },
-
-                new Item()
-                {
-                    Items = "Notificacion",
-
-                },
-                new Item()
-                {
-                    Items = "Docuviewer",
-
-                },
-                new Item()
-                {
-                    Items = "60 GB",
-
-                },
-
-                new Item()
-                {
-                    Items = "4 Firma digital adobe Sing ",
-
-                },
-
-            }
+            Color = "#FF4B6D",
+            Items = "1 Empresa,4 Usuario,30 Tipos de Documento,Versionamiento de documentos,Flow,Notificacion,Docuviewer,60 GB,4 Firma digital adobe Sing ",
            },
 
            new CarouselModel{
             Title = "Flexi Personalizado",
-            Price = "Escríbanos para más información",
-            ListItems = new List<Item>{
-                new Item()
-                {
-                    Items = "flexy-info@myflexifile.com",
-
-                },
-
-               
-
-            }
+            Price = " ",
+            Color = "#FD66AB",
+            Items = "Escríbanos para más información a flexy-info@myflexifile.com",
            },
 
         };
 
         public ICommand changeThemeCommand { get; set; }
+        public ICommand FlexiFilePlanCommand { get; set; }
         #region Properties
         public ObservableCollection<CarouselModel> List
         {
@@ -229,16 +69,26 @@ namespace Prueba.ViewModels
 
         public CarouselViewModel()
         {
-
             Console.WriteLine("entro en el constructor");
-            
+            FlexiFilePlanCommand = new Command(async => FlexifilePlanClicked());
+            changeThemeCommand = new Command(async => FlexifilePlanClicked());
+        }
 
-
+        private async void FlexifilePlanClicked()
+        {
+            Console.WriteLine("abrir planes ");
+            try
+            {
+                await Browser.OpenAsync("https://www.myflexifile.com", BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                // An unexpected error occured. No browser may be installed on the device.
+            }
         }
 
 
-
-       
 
         private async void ApiConection()
         {

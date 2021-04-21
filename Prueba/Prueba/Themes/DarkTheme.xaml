@@ -3,15 +3,30 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="ThemingDemo.DarkTheme">
 
-    <Color x:Key="PageBackgroundColor">Black</Color>
-    <Color x:Key="NavigationBarColor">Teal</Color>
-    <Color x:Key="PrimaryColor">Teal</Color>
-    <Color x:Key="SecondaryColor">White</Color>
-    <Color x:Key="PrimaryTextColor">White</Color>
-    <Color x:Key="SecondaryTextColor">White</Color>
-    <Color x:Key="TertiaryTextColor">WhiteSmoke</Color>
-    <Color x:Key="TransparentColor">Transparent</Color>
-    <Color x:Key="AccentColor">red</Color>
+    <Color x:Key="PrimaryColor">#9179FE</Color>
+    <Color x:Key="SecondaryColor">#584475</Color>
+    <Color x:Key="PrimaryDarkenColor">#ab3641</Color>
+    <Color x:Key="PrimaryLighterColor">#edcacd</Color>
+    <Color x:Key="PrimaryGradient">#e83f94</Color>
+    <Color x:Key="PrimaryLight">#ffe8f4</Color>
+    <Color x:Key="SecondaryGradient">#7644ad</Color>
+    <Color x:Key="Secondary">#d54381</Color>
+    <Color x:Key="Green">#7ed321</Color>
+    <Color x:Key="Red">#ff4a4a</Color>
+    <Color x:Key="Orange">#ff844a</Color>
+    <Color x:Key="Blue">#4acaff</Color>
+    <Color x:Key="HyperLink">#567cd7</Color>
+    <Color x:Key="FacebookBlue">#4267B2</Color>
+
+
+    <Color x:Key="BarTextColor">#FFFFFF</Color>
+    <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
+    <Color x:Key="PlaceholderColor">#686969</Color>
+    <Color x:Key="TitleTextColor">#9179FE</Color>
+    <Color x:Key="SelectedTabColor">#9179FE</Color>
+    <Color x:Key="bottomNavigationBar">#1D1D1D</Color>
+    <Color x:Key="BasePageColor">#121212</Color>
+    <Color x:Key="SecondBasePageColor">#1D1D1D</Color>
 
 </ResourceDictionary>
 
